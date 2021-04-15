@@ -40,17 +40,17 @@ class build_py(_build_py):
 
 
 setup(
-    name='mytools',
+    name='app',
     version='0.1.0',
     packages=find_packages(),
     ext_modules=cythonize(
-        get_ext_paths('mytools', EXCLUDE_FILES),
+        get_ext_paths('app', EXCLUDE_FILES),
         compiler_directives={'language_level': 3}
     ),
     cmdclass={
         'build_py': build_py
     },
     package_data={
-        "mytools": ["models/*", "main.py"],#"main.py" is running file
+        "app": ["models/*", "main.py"],#"main.py" is running file
     }
 )
