@@ -9,6 +9,7 @@ from Cython.Build import cythonize
 from Cython.Distutils import build_ext
 
 EXCLUDE_FILES = [
+    "app/main.py"
 ]
 
 
@@ -41,7 +42,6 @@ setup(
     packages=find_packages(),
     ext_modules=cythonize(
         get_ext_paths('app', EXCLUDE_FILES),
-        exclude=["app/main.py"],
         compiler_directives={'language_level': 3}
     ),
     cmdclass={
