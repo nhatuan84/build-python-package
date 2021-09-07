@@ -42,6 +42,7 @@ setup(
     packages=find_packages(),
     ext_modules=cythonize(
         get_ext_paths('app', EXCLUDE_FILES),
+        #exclude=["app/main.py"], #or exclude here
         compiler_directives={'language_level': 3}
     ),
     cmdclass={
